@@ -1,34 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace JsonUWP.Attributes
+namespace Imagine.Uwp.Json.Attributes
 {
-    public class SignAttribute:Attribute
+    public class SignAttribute : Attribute
     {
-        public String Name { get; set; }
+        public string Name { get; set; }
 
-        private Type type;
+        public Type Type { get; set; }
 
-        public Type Type
+        public bool IsList { get; set; }
+
+
+        public SignAttribute(string name)
         {
-            get { return type; }
-            set { type = value; }
-        }
-
-        private bool isList = false;
-
-        public bool IsList
-        {
-            get { return isList; }
-            set { isList = value; }
-        }
-
-
-        public SignAttribute(String name) {
-            this.Name = name;
+            Name = name;
         }
     }
 }
